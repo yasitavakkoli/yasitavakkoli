@@ -32,4 +32,5 @@ class ShoppingViewModel @Inject constructor(
     companion object {
         private const val DEFAULT_QUERY="watch"
     }
+
 }

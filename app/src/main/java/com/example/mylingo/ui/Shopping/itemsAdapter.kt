@@ -22,52 +22,33 @@ class itemsAdapter: PagingDataAdapter<items,
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): itemsViewHolder
     {
+
         val binding=ItemItemsBinding.inflate(LayoutInflater.from(parent.context),
             parent,false)
+
         binding.setClickListener {
-           // if(binding.checkBox.isChecked == false) {
-                if (!(SaleList.contains(
-                        items(
-                            "",
-                            binding.itemsTextView.text.toString().toInt(),
-                            "",
-                            items.itemsUser("", ""),
-                            items.itemsUrls("", "", binding.UrlTextView.text.toString(), "", "")
-                        )
-                    ))
-                ) {
-                    SaleList.add(
-                        items(
-                            "",
-                            binding.itemsTextView.text.toString().toInt(),
-                            "",
-                            items.itemsUser("", ""),
-                            items.itemsUrls("", "", binding.UrlTextView.text.toString(), "", "")
-                        )
-                    )
-                    binding.checkBox.isChecked = true
-                } else {
-                    //send message
-                    binding.checkBox.isChecked = true
+            val find:items? = SaleList.find{ Salelist: items -> Salelist.urls.regular==binding.UrlTextView.text.toString() }
+            if (find!=null){
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    SaleList.removeIf(Predicate { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString()})
                 }
-          /*  }
-                else{
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                        SaleList.removeIf(Predicate { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString()})
+                binding.checkBox.isChecked = false
+            }
+            else{
+                SaleList.add(
+                    items(
+                          "",
+                          1,
+                           binding.itemsTextView.text.toString().toInt(),
+                           binding.itemsTextView.text.toString().toInt(),
+                          "",
+                           items.itemsUser("", ""),
+                           items.itemsUrls("", "", binding.UrlTextView.text.toString(), "", "")
+                           )
+                        )
+                        binding.checkBox.isChecked = true
                     }
-                    binding.checkBox.isChecked=false
-                }*/
-
-
-      //              SaleList.find { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() }!!
-
-          //  SaleList.add(items("",binding.itemsTextView.text.toString().toInt(),"",items.itemsUser("",""),items.itemsUrls("","",binding.UrlTextView.text.toString(),"","")))
-          //  binding.itemsTextView.text= SaleList.size.toString()
-           // binding.checkBox.isChecked=true
-
-
       }
-
             return itemsViewHolder((binding))
     }
 
@@ -100,4 +81,5 @@ class itemsAdapter: PagingDataAdapter<items,
               = oldItem == newItem
         }
     }
+
 }

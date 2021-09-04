@@ -23,4 +23,5 @@ class AboutUsFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }

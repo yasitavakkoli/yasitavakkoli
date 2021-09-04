@@ -31,6 +31,7 @@ class ShopListFragment:Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }
 
 

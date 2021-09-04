@@ -6,8 +6,9 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class items(
     val id:String,
+    var width: Int,
     val height: Int,
-    //  val likes:Int,
+    var likes:Int,
     val description:String?,
     val user: itemsUser,
     val urls: itemsUrls,
@@ -28,5 +29,6 @@ data class items(
         val small:String,
         val thumb:String
     ): Parcelable {
+
     }
 }

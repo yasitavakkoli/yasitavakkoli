@@ -36,4 +36,5 @@ class IntroActivity : AppCompatActivity() {
             }
         })
     }
+
 }

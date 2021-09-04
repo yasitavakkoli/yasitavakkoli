@@ -1,5 +1,6 @@
 package com.example.mylingo.ui.ShopList
 
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -13,6 +14,7 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.mylingo.data.items
 import com.example.mylingo.R
 import com.example.mylingo.databinding.ListItemsBinding
+import java.util.function.Predicate
 
 
 class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
@@ -26,13 +28,19 @@ class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
             parent,false)
         binding.setClickListener {
             binding.incimageButton.setOnClickListener(){
-
+                binding.NumTextView.text=(binding.NumTextView.text.toString().toInt()+1).toString()
+                binding.totalTextView.text=(binding.NumTextView.text.toString().toInt()*binding.costTextView.text.toString().toInt()).toString()
+                SaleList.find { Salelist: items -> Salelist.urls.regular==binding.UrlTextView.text.toString() }?.width =binding.NumTextView.text.toString().toInt()
+                SaleList.find { Salelist: items -> Salelist.urls.regular==binding.UrlTextView.text.toString() }?.likes =binding.totalTextView.text.toString().toInt()
             }
         binding.decimageButton.setOnClickListener(){
-
+            if (binding.NumTextView.text.toString().toInt()>1) { binding.NumTextView.text=(binding.NumTextView.text.toString().toInt()-1).toString() }
+            binding.totalTextView.text=(binding.NumTextView.text.toString().toInt()*binding.costTextView.text.toString().toInt()).toString()
+            SaleList.find { Salelist: items -> Salelist.urls.regular==binding.UrlTextView.text.toString() }?.width =binding.NumTextView.text.toString().toInt()
+            SaleList.find { Salelist: items -> Salelist.urls.regular==binding.UrlTextView.text.toString() }?.likes =binding.totalTextView.text.toString().toInt()
             }
         binding.delimageButton.setOnClickListener(){
-
+             SaleList.removeAll({ Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString()})
             }
         }
             return ListViewHolder(binding)
@@ -46,8 +54,10 @@ class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
             .transition(DrawableTransitionOptions.withCrossFade())
             .error(R.drawable.ic_baseline_error_outline_24)
             .into(holder.Mimage)
-        holder.Mheight.text=SaleList[position].height.toString()
+        holder.MCost.text=SaleList[position].height.toString()
         holder.MUrl.text=SaleList[position].urls.regular
+        holder.MNum.text=SaleList[position].width.toString()
+        holder.MTotalCost.text=SaleList[position].likes.toString()
     /* val currentItem = getItem(position)
         currentItem?.let{ holder.bind(it) }*/
     }
@@ -55,8 +65,12 @@ class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
         RecyclerView.ViewHolder(binding.root) {
         val MUrl:TextView=itemView.findViewById(R.id.UrlTextView)
         val Mimage:ImageView=itemView.findViewById(R.id.ImageView)
-        val Mheight:TextView=itemView.findViewById(R.id.itemsTextView)
+        val MNum:TextView=itemView.findViewById(R.id.NumTextView)
+        val MTotalCost:TextView=itemView.findViewById(R.id.totalTextView)
+        val MCost:TextView=itemView.findViewById(R.id.costTextView)
+
         }
+
     override fun getItemCount(): Int {
         return SaleList.size;
     }

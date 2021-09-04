@@ -37,6 +37,9 @@
             android:name="category"
             app:argType="string"
             android:defaultValue="watch" />
+        <action
+            android:id="@+id/action_shoppingFragment3_to_shopListFragment"
+            app:destination="@id/shopListFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutUsFragment"

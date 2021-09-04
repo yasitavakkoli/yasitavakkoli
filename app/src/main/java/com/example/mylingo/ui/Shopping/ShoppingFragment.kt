@@ -63,4 +63,5 @@ class ShoppingFragment : Fragment(R.layout.fragment_shopping) {
         super.onDestroyView()
         _binding = null
     }
+
 }

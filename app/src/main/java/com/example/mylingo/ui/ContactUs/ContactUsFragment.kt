@@ -43,4 +43,5 @@ class ContactUsFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }

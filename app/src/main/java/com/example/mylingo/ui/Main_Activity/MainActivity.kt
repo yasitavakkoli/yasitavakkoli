@@ -56,5 +56,4 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val navController=findNavController(R.id.fragmentContainerView)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
-
 }
