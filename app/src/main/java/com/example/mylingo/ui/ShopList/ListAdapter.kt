@@ -17,7 +17,6 @@ import com.example.mylingo.databinding.ListItemsBinding
 
 class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
         ListAdapter.ListViewHolder>(LIST_COMPARATOR)
-    //RecyclerView.Adapter<ListAdapter.ListViewHolder>
 {
     val SaleList:MutableList<items> = MyList
 
@@ -41,21 +40,6 @@ class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int)
     {
-
-       /* fun bind(Items:MutableList<items>) {
-            binding.apply {
-                Glide.with(itemView)
-                    .load(Items[].urls.regular)
-                    .centerCrop()
-                    .transition(DrawableTransitionOptions.withCrossFade())
-                    .error(R.drawable.ic_baseline_error_outline_24)
-                    .into(ImageView)
-                itemsTextView.text= Items.height.toString()
-                UrlTextView.text=Items.urls.regular
-            }
-        }*/
-
-        //holder.Mimage.setImageURI(SaleList[position].urls.regular.toUri())
         Glide.with(holder.itemView)
             .load(SaleList[position].urls.regular)
             .centerCrop()
@@ -85,6 +69,4 @@ class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
               = oldItem == newItem
         }
     }
-
-
 }

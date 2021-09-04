@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/dashboardFragment3">
+    <fragment
+        android:id="@+id/dashboardFragment3"
+        android:name="com.example.mylingo.ui.Dashboard.DashboardFragment"
+        tools:layout="@layout/fragment_dashboard"
+        android:label="DashboardFragment" >
+        <action
+            android:id="@+id/action_dashboardFragment3_to_shoppingFragment3"
+            app:destination="@id/shoppingFragment3" />
+        <action
+            android:id="@+id/action_dashboardFragment3_to_aboutUsFragment"
+            app:destination="@id/aboutUsFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment3_to_contactUsFragment"
+            app:destination="@id/contactUsFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment3_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment3_to_shopListFragment"
+            app:destination="@id/shopListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoppingFragment3"
+        android:name="com.example.mylingo.ui.Shopping.ShoppingFragment"
+        android:label="ShoppingFragment"
+        tools:layout="@layout/fragment_shopping">
+        <action
+            android:id="@+id/action_shoppingFragment3_to_dashboardFragment3"
+            app:destination="@id/dashboardFragment3" />
+        <argument
+            android:name="category"
+            app:argType="string"
+            android:defaultValue="watch" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.example.mylingo.ui.AboutUs.AboutUsFragment"
+        android:label="fragment_about_us"
+        tools:layout="@layout/fragment_about_us" >
+        <action
+            android:id="@+id/action_aboutUsFragment_to_dashboardFragment3"
+            app:destination="@id/dashboardFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:name="com.example.mylingo.ui.ContactUs.ContactUsFragment"
+        android:label="fragment_contact_us"
+        tools:layout="@layout/fragment_contact_us" >
+        <action
+            android:id="@+id/action_contactUsFragment_to_dashboardFragment3"
+            app:destination="@id/dashboardFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.mylingo.ui.Setting.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_settingFragment_to_dashboardFragment3"
+            app:destination="@id/dashboardFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/shopListFragment"
+        android:name="com.example.mylingo.ui.ShopList.ShopListFragment"
+        android:label="fragment_shop_list"
+        tools:layout="@layout/fragment_shop_list" >
+        <action
+            android:id="@+id/action_shopListFragment_to_shoppingFragment3"
+            app:destination="@id/shoppingFragment3" />
+    </fragment>
+</navigation>
