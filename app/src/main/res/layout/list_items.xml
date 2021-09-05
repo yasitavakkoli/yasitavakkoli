@@ -20,7 +20,7 @@
             android:id="@+id/ImageView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:contentDescription="Picture"
+            android:contentDescription="@string/picture"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -44,9 +44,9 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:padding="5dp"
-            android:text="Cost"
+            android:text="@string/cost"
             android:textColor="@color/white"
-            android:textSize="24dp"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/RightVerticalGuideLine"
             android:visibility="invisible"/>
@@ -57,9 +57,9 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:padding="5dp"
-            android:text="Total Cost"
+            android:text="@string/total_cost"
             android:textColor="@color/white"
-            android:textSize="24dp"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/RightVerticalGuideLine"
             android:visibility="invisible"/>
@@ -70,9 +70,9 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:padding="5dp"
-            android:text="Total Cost"
+            android:text="@string/total_cost"
             android:textColor="@color/white"
-            android:textSize="24dp"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/RightVerticalGuideLine" />
         <TextView
@@ -112,7 +112,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/totalTextView"
             app:layout_constraintEnd_toStartOf="@+id/NumTextView"
             android:onClick="@{clickListener1}"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="ContentDescription,MissingConstraints" />
 
         <ImageButton
             android:id="@+id/decimageButton"
@@ -122,7 +122,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/totalTextView"
             app:layout_constraintEnd_toStartOf="@+id/delimageButton"
             app:layout_constraintStart_toEndOf="@+id/NumTextView"
-            android:onClick="@{clickListener2}" />
+            android:onClick="@{clickListener2}"
+            tools:ignore="ContentDescription" />
         <ImageButton
             android:id="@+id/delimageButton"
             android:layout_width="wrap_content"
@@ -139,9 +140,9 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:padding="5dp"
-            android:text="Num"
+            android:text="@string/num"
             android:textColor="@color/white"
-            android:textSize="24dp"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="@+id/totalTextView"
             app:layout_constraintStart_toEndOf="@+id/incimageButton"
             app:layout_constraintEnd_toStartOf="@+id/decimageButton" />

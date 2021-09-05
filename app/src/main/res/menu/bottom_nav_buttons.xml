@@ -3,16 +3,16 @@
     <item
         android:id="@+id/dashboardFragment3"
         android:icon="@drawable/ic_baseline_dashboard_24"
-        android:title="Dashboard"
+        android:title="@string/dashboard"
         />
     <item
         android:id="@+id/shopListFragment"
         android:icon="@drawable/ic_baseline_shopping_cart_24"
-        android:title="Shop List"
+        android:title="@string/shop_list"
         />
     <item
         android:id="@+id/contactUsFragment"
         android:icon="@drawable/ic_baseline_mode_comment_24"
-        android:title="Contact Us"
+        android:title="@string/contact_us"
         />
 </menu>

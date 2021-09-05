@@ -23,15 +23,12 @@ class itemsAdapter: PagingDataAdapter<items,
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): itemsViewHolder
     {
-
         val binding=ItemItemsBinding.inflate(LayoutInflater.from(parent.context),
             parent,false)
-
         binding.setClickListener {
             val find:items? = SaleList.find{ Salelist: items -> Salelist.urls.regular==binding.UrlTextView.text.toString() }
             if (find!=null){
                 Snackbar.make(binding.root, "this Item already added.", Snackbar.LENGTH_LONG).show()
-               // binding.checkBox.isChecked = false
             }
             else{
                 SaleList.add(
@@ -80,5 +77,4 @@ class itemsAdapter: PagingDataAdapter<items,
               = oldItem == newItem
         }
     }
-
 }

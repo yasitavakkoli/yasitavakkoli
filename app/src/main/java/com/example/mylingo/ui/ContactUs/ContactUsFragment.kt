@@ -22,7 +22,7 @@ class ContactUsFragment : Fragment() {
         binding.ComposeButton.setOnClickListener {
             val EmailText:String
             EmailText=binding.CommentTextMultiLine.text.toString()
-            Send(arrayOf("reza1939@gmail.com"),"Email Sent",EmailText)
+            Send(arrayOf("yasitavakkoli@gmail.com"),"Email Sent",EmailText)
         }
         return view
     }

@@ -12,7 +12,6 @@ data class items(
     val description:String?,
     val user: itemsUser,
     val urls: itemsUrls,
-
     ): Parcelable {
     @Parcelize
     data class itemsUser(
@@ -29,6 +28,5 @@ data class items(
         val small:String,
         val thumb:String
     ): Parcelable {
-
     }
 }

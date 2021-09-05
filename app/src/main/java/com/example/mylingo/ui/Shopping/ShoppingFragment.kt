@@ -29,14 +29,12 @@ class ShoppingFragment : Fragment(R.layout.fragment_shopping) {
         binding.apply {
             itemsRecyclerView.setHasFixedSize(true)
             itemsRecyclerView.adapter = adapter
-
         }
 
-        viewModel.Items.observe(viewLifecycleOwner, Observer {
+        viewModel.Items.observe(viewLifecycleOwner, {
             adapter.submitData(viewLifecycleOwner.lifecycle, it)
         })
             viewModel.searchitems(args.category)
-
     }
 
     override fun onCreateView(
@@ -45,17 +43,6 @@ class ShoppingFragment : Fragment(R.layout.fragment_shopping) {
     ): View {
         _binding = FragmentShoppingBinding.inflate(layoutInflater,container,false)
         val view = binding.root
-
-  /* binding.itemsRecyclerView.setOnClickListener{
-       C.add(items("",ItemItemsBinding.bind(view).itemsTextView.text.toString().toInt(),"",items.itemsUser("",""),items.itemsUrls("","",ItemItemsBinding.bind(view).UrlTextView.text.toString(),"","")))
-   }*/
-       /* fun onItemClick(position:Int) {
-            C.add(items("",ItemItemsBinding.bind(view).itemsTextView.text.toString().toInt(),"",items.itemsUser("",""),items.itemsUrls("","",ItemItemsBinding.bind(view).UrlTextView.text.toString(),"","")))
-}*/
-     /*   b =ItemItemsBinding.inflate(inflater)
-        b!!.checkBox.setOnClickListener{
-           C.add(items("",ItemItemsBinding.bind(it).itemsTextView.text.toString().toInt(),"",items.itemsUser("",""),items.itemsUrls("","",ItemItemsBinding.bind(it).UrlTextView.text.toString(),"","")))
-        }*/
         return view
     }
 
@@ -63,5 +50,4 @@ class ShoppingFragment : Fragment(R.layout.fragment_shopping) {
         super.onDestroyView()
         _binding = null
     }
-
 }

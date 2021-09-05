@@ -5,11 +5,8 @@
     android:layout_height="match_parent"
     tools:context=".ui.Setting.SettingFragment"
     android:background="@color/teal_200">
-
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Setting" />
-
+        android:text="@string/setting" />
 </FrameLayout>

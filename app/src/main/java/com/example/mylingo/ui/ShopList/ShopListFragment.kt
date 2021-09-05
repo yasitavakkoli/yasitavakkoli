@@ -12,7 +12,6 @@ import com.example.mylingo.ui.Shopping.SaleList
 class ShopListFragment:Fragment() {
     private var _binding: FragmentShopListBinding? = null
     private val binding get() = _binding!!
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,7 +30,6 @@ class ShopListFragment:Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }
 
 

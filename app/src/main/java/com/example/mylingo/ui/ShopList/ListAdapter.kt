@@ -32,19 +32,15 @@ class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
         val binding= ListItemsBinding.inflate(LayoutInflater.from(parent.context),
             parent,false)
         binding.setClickListener1 {
-          // binding.incimageButton.setOnClickListener() {
-             //   binding.NumTextView.text =
-                    (binding.NumTextView.text.toString().toInt() + 1).toString()
-                binding.totalTextView.text = (binding.NumTextView.text.toString()
-                    .toInt() * binding.costTextView.text.toString().toInt()).toString()
-                SaleList.find { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() }?.width =
-                    binding.NumTextView.text.toString().toInt()
-                SaleList.find { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() }?.likes =
-                    binding.totalTextView.text.toString().toInt()
-           // }
+              (binding.NumTextView.text.toString().toInt() + 1).toString()
+               binding.totalTextView.text = (binding.NumTextView.text.toString()
+                  .toInt() * binding.costTextView.text.toString().toInt()).toString()
+               SaleList.find { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() }?.width =
+                  binding.NumTextView.text.toString().toInt()
+               SaleList.find { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() }?.likes =
+                  binding.totalTextView.text.toString().toInt()
         }
         binding.setClickListener2 {
-           // binding.decimageButton.setOnClickListener() {
                 if (binding.NumTextView.text.toString().toInt() > 1) {
                     binding.NumTextView.text =
                         (binding.NumTextView.text.toString().toInt() - 1).toString()
@@ -55,19 +51,10 @@ class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
                     binding.NumTextView.text.toString().toInt()
                 SaleList.find { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() }?.likes =
                     binding.totalTextView.text.toString().toInt()
-           // }
         }
         binding.setClickListener3 {
-           // binding.delimageButton.setOnClickListener() {
-                // if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                //SaleList.removeIf(Predicate { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString()}
-
-                //  for (items in SaleList) {
                 val p: Int = binding.PosTextView.text.toString().toInt()
-                //notifyItemRemoved(p)
                 if (SaleList.removeAll({ Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() })) {
-                    //  onBindViewHolder(ListViewHolder(binding),binding.PosTextView.text.toString().toInt())
-                    // notifyItemRemoved()
                     Snackbar.make(
                         binding.root,
                         "this Item has been delete.",
@@ -76,12 +63,6 @@ class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
                     notifyItemRemoved(p)
                 }
                 }
-                // }
-                /*  SaleList.removeAll({ Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() })*/
-                //  notifyItemRemoved(binding.PosTextView.text.toString().toInt())
-          //  }
-       // }
-          //  }
 
             return ListViewHolder(binding)
     }
@@ -99,25 +80,7 @@ class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
         holder.MNum.text=SaleList[position].width.toString()
         holder.MTotalCost.text=SaleList[position].likes.toString()
         holder.Mpos.text=position.toString()
-    /* val currentItem = getItem(position)
-        currentItem?.let{ holder.bind(it) }*/
     }
- /*   override fun onBindViewHolder(holder: ListViewHolder, position: Int,payload: DiffingChangePayload)
-    {
-        Glide.with(holder.itemView)
-            .load(SaleList[position].urls.regular)
-            .centerCrop()
-            .transition(DrawableTransitionOptions.withCrossFade())
-            .error(R.drawable.ic_baseline_error_outline_24)
-            .into(holder.Mimage)
-        holder.MCost.text=SaleList[position].height.toString()
-        holder.MUrl.text=SaleList[position].urls.regular
-        holder.MNum.text=SaleList[position].width.toString()
-        holder.MTotalCost.text=SaleList[position].likes.toString()
-        holder.Mpos.text=position.toString()
-        /* val currentItem = getItem(position)
-            currentItem?.let{ holder.bind(it) }*/
-    }*/
     class ListViewHolder(private val binding:ListItemsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         val MUrl:TextView=itemView.findViewById(R.id.UrlTextView)
@@ -132,16 +95,12 @@ class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
         return SaleList.size
     }
 
-   /* fun updateSaleList(NewList:MutableList<items>){
-        val diffResult:DiffUtil.DiffResult=DiffUtil.calculateDiff(DiffUtil)
-    }*/
     companion object{
       private val LIST_COMPARATOR = object :DiffUtil.ItemCallback<items>(){
          override fun areItemsTheSame(oldItem: items, newItem: items): Boolean
               = oldItem.id == newItem.id
          override fun areContentsTheSame(oldItem: items, newItem: items)
               = oldItem == newItem
-         // override fun getOldListSize()
         }
     }
 }

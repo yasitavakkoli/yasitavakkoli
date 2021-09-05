@@ -8,8 +8,7 @@
         tools:context=".ui.Dashboard.DashboardFragment">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
             <LinearLayout
                 android:id="@+id/HLinearlayout1"
                 android:layout_width="match_parent"
@@ -50,14 +49,14 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            tools:ignore="MissingConstraints" />
+                            tools:ignore="ContentDescription,MissingConstraints" />
 
                         <TextView
                             android:id="@+id/WatchTextView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
-                            android:text="WATCH"
+                            android:text="@string/watch"
                             android:textAllCaps="true"
                             android:textColor="@color/white"
                             android:textSize="14sp"
@@ -97,14 +96,14 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            tools:ignore="MissingConstraints" />
+                            tools:ignore="ContentDescription,MissingConstraints" />
 
                         <TextView
                             android:id="@+id/HatTextView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
-                            android:text="HAT"
+                            android:text="@string/hat"
                             android:textAllCaps="true"
                             android:textColor="@color/white"
                             android:textSize="14sp"
@@ -155,13 +154,13 @@
                             app:layout_constraintBottom_toTopOf="@id/ShoesTextView"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            tools:ignore="MissingConstraints"
+                            tools:ignore="ContentDescription,MissingConstraints"
                             />
                         <TextView
                             android:id="@+id/ShoesTextView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="SHOES"
+                            android:text="@string/shoes"
                             tools:ignore="MissingConstraints"
                             android:textAllCaps="true"
                             android:textColor="@color/white"
@@ -201,13 +200,13 @@
                             app:layout_constraintBottom_toTopOf="@id/SocksTextView"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            tools:ignore="MissingConstraints"
+                            tools:ignore="ContentDescription,MissingConstraints"
                             />
                         <TextView
                             android:id="@+id/SocksTextView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="SOCKS"
+                            android:text="@string/socks"
                             tools:ignore="MissingConstraints"
                             android:textAllCaps="true"
                             android:textColor="@color/white"
@@ -259,13 +258,13 @@
                             app:layout_constraintBottom_toTopOf="@id/DressTextView"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            tools:ignore="MissingConstraints"
+                            tools:ignore="ContentDescription,MissingConstraints"
                             />
                         <TextView
                             android:id="@+id/DressTextView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="DRESS"
+                            android:text="@string/dress"
                             tools:ignore="MissingConstraints"
                             android:textAllCaps="true"
                             android:textColor="@color/white"
@@ -305,13 +304,13 @@
                             app:layout_constraintBottom_toTopOf="@id/TestsHelpTextView"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            tools:ignore="MissingConstraints"
+                            tools:ignore="ContentDescription,MissingConstraints"
                             />
                         <TextView
                             android:id="@+id/TestsHelpTextView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="SHIRT"
+                            android:text="@string/shirt"
                             tools:ignore="MissingConstraints"
                             android:textAllCaps="true"
                             android:textColor="@color/white"
