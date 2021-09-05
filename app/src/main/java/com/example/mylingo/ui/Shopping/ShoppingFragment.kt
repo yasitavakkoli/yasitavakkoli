@@ -7,10 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.example.mylingo.databinding.FragmentShoppingBinding
 import dagger.hilt.android.AndroidEntryPoint
 import com.example.mylingo.R
+import com.example.mylingo.ui.Dashboard.DashboardFragmentDirections
 
 
 @AndroidEntryPoint
@@ -43,8 +45,13 @@ class ShoppingFragment : Fragment(R.layout.fragment_shopping) {
     ): View {
         _binding = FragmentShoppingBinding.inflate(layoutInflater,container,false)
         val view = binding.root
+        binding.ShopListFloatingButton.setOnClickListener {
+            val action =ShoppingFragmentDirections.actionShoppingFragment3ToShopListFragment()
+            Navigation.findNavController(view).navigate(action)
+        }
         return view
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

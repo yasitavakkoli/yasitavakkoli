@@ -20,5 +20,16 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_items"
             android:layout_marginTop="10dp" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/ShopListFloatingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_baseline_shopping_cart_24"
+            tools:ignore="ContentDescription,VectorDrawableCompat"
+            app:layout_anchor="@id/itemsRecyclerView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="20dp"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

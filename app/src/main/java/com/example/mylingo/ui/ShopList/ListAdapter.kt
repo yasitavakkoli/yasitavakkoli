@@ -1,13 +1,9 @@
 package com.example.mylingo.ui.ShopList
 
-import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.annotation.NonNull
-import androidx.paging.DifferCallback
-import androidx.paging.DiffingChangePayload
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -15,12 +11,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.mylingo.data.items
 import com.example.mylingo.R
-import com.example.mylingo.databinding.FragmentShopListBinding
 import com.example.mylingo.databinding.ListItemsBinding
-import com.example.mylingo.ui.Shopping.itemsAdapter
 import com.google.android.material.snackbar.Snackbar
-import java.util.function.Predicate
-
 
 class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
         ListAdapter.ListViewHolder>(LIST_COMPARATOR)
@@ -31,40 +23,48 @@ class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
     {
         val binding= ListItemsBinding.inflate(LayoutInflater.from(parent.context),
             parent,false)
-        binding.setClickListener1 {
-              (binding.NumTextView.text.toString().toInt() + 1).toString()
-               binding.totalTextView.text = (binding.NumTextView.text.toString()
-                  .toInt() * binding.costTextView.text.toString().toInt()).toString()
-               SaleList.find { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() }?.width =
-                  binding.NumTextView.text.toString().toInt()
-               SaleList.find { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() }?.likes =
-                  binding.totalTextView.text.toString().toInt()
-        }
-        binding.setClickListener2 {
-                if (binding.NumTextView.text.toString().toInt() > 1) {
-                    binding.NumTextView.text =
-                        (binding.NumTextView.text.toString().toInt() - 1).toString()
+
+            binding.setClickListener1 {
+                        binding.NumTextView.text=(binding.NumTextView.text.toString().toInt() + 1).toString()
+                        binding.totalTextView.text = (binding.NumTextView.text.toString()
+                            .toInt() * binding.costTextView.text.toString().toInt()).toString()
+                        SaleList.find { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() }?.width =
+                            binding.NumTextView.text.toString().toInt()
+                        SaleList.find { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() }?.likes =
+                            binding.totalTextView.text.toString().toInt()
+
                 }
-                binding.totalTextView.text = (binding.NumTextView.text.toString()
-                    .toInt() * binding.costTextView.text.toString().toInt()).toString()
-                SaleList.find { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() }?.width =
-                    binding.NumTextView.text.toString().toInt()
-                SaleList.find { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() }?.likes =
-                    binding.totalTextView.text.toString().toInt()
-        }
-        binding.setClickListener3 {
-                val p: Int = binding.PosTextView.text.toString().toInt()
-                if (SaleList.removeAll({ Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() })) {
-                    Snackbar.make(
-                        binding.root,
-                        "this Item has been delete.",
-                        Snackbar.LENGTH_LONG
-                    ).show()
-                    notifyItemRemoved(p)
+        binding.setClickListener2(){
+               // binding.decimageButton.setOnClickListener {
+
+                        if (binding.NumTextView.text.toString().toInt() > 1) {
+                            binding.NumTextView.text =(binding.NumTextView.text.toString().toInt() - 1).toString()
+                        }
+                        binding.totalTextView.text = (binding.NumTextView.text.toString()
+                            .toInt() * binding.costTextView.text.toString().toInt()).toString()
+                   // SaleList[p].width=binding.NumTextView.text.toString().toInt()
+
+                        SaleList.find { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() }?.width =
+                            binding.NumTextView.text.toString().toInt()
+                        SaleList.find { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() }?.likes =
+                            binding.totalTextView.text.toString().toInt()
+                   // notifyItemChanged(p)
+
                 }
+        binding.setClickListener3(){
+               // binding.delimageButton.setOnClickListener {
+                    val p: Int = binding.PosTextView.text.toString().toInt()
+                    if (SaleList.removeAll({ Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() })) {
+                        Snackbar.make(
+                            binding.root,
+                            "this Item has been delete.",
+                            Snackbar.LENGTH_LONG
+                        ).show()
+                        notifyItemRemoved(p)
+                    }
                 }
 
-            return ListViewHolder(binding)
+        return ListViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int)
