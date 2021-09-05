@@ -13,7 +13,9 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.mylingo.data.items
 import com.example.mylingo.R
+import com.example.mylingo.databinding.FragmentShopListBinding
 import com.example.mylingo.databinding.ListItemsBinding
+import com.example.mylingo.ui.Shopping.itemsAdapter
 import java.util.function.Predicate
 
 
@@ -40,7 +42,15 @@ class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
             SaleList.find { Salelist: items -> Salelist.urls.regular==binding.UrlTextView.text.toString() }?.likes =binding.totalTextView.text.toString().toInt()
             }
         binding.delimageButton.setOnClickListener(){
-             SaleList.removeAll({ Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString()})
+             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                 //SaleList.removeIf(Predicate { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString()}
+                    // for (items in SaleList) {
+                         SaleList.removeAll({ Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() })
+                       //  notifyItemRemoved(binding.PosTextView.text.toString().toInt())
+                   //  }
+               /*  SaleList.removeAll({ Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() })*/
+               //  notifyItemRemoved(binding.PosTextView.text.toString().toInt())
+                 }
             }
         }
             return ListViewHolder(binding)
@@ -58,6 +68,7 @@ class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
         holder.MUrl.text=SaleList[position].urls.regular
         holder.MNum.text=SaleList[position].width.toString()
         holder.MTotalCost.text=SaleList[position].likes.toString()
+        holder.Mpos.text=position.toString()
     /* val currentItem = getItem(position)
         currentItem?.let{ holder.bind(it) }*/
     }
@@ -68,7 +79,7 @@ class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
         val MNum:TextView=itemView.findViewById(R.id.NumTextView)
         val MTotalCost:TextView=itemView.findViewById(R.id.totalTextView)
         val MCost:TextView=itemView.findViewById(R.id.costTextView)
-
+        val Mpos:TextView=itemView.findViewById(R.id.PosTextView)
         }
 
     override fun getItemCount(): Int {

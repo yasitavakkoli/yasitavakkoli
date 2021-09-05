@@ -11,6 +11,7 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.mylingo.data.items
 import com.example.mylingo.R
 import com.example.mylingo.databinding.ItemItemsBinding
+import com.google.android.material.snackbar.Snackbar
 import java.util.function.Predicate
 
 
@@ -29,10 +30,8 @@ class itemsAdapter: PagingDataAdapter<items,
         binding.setClickListener {
             val find:items? = SaleList.find{ Salelist: items -> Salelist.urls.regular==binding.UrlTextView.text.toString() }
             if (find!=null){
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                    SaleList.removeIf(Predicate { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString()})
-                }
-                binding.checkBox.isChecked = false
+                Snackbar.make(binding.root, "this Item already added.", Snackbar.LENGTH_LONG).show()
+               // binding.checkBox.isChecked = false
             }
             else{
                 SaleList.add(
