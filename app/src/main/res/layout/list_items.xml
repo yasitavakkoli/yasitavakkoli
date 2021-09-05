@@ -132,7 +132,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/totalTextView"
             app:layout_constraintStart_toEndOf="@+id/decimageButton"
             android:onClick="@{clickListener3}"
-            />
+            tools:ignore="ContentDescription" />
         <TextView
             android:id="@+id/NumTextView"
             android:layout_width="wrap_content"
