@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/settingFragment"
         android:title="Setting"/>
-    <group android:checkableBehavior="single">
-        <item android:id="@+id/aboutUsFragment"
-           android:title="About Us"/>
-        <item android:id="@+id/contactUsFragment"
-           android:title="Contact Us"/>
-    </group>
+    <item android:id="@+id/aboutUsFragment"
+        android:title="About Us"/>
+    <item android:id="@+id/contactUsFragment"
+        android:title="Contact Us"/>
     <item android:id="@+id/profileFragment"
         android:title="Profile"/>
-    <item android:title="Exit" android:id="@+id/Quit" />
+    <item android:id="@+id/Quit"
+        android:title="Exit" />
 </menu>

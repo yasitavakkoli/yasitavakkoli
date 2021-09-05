@@ -6,15 +6,15 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.ui.*
 import com.example.mylingo.databinding.ActivityMainBinding
 import com.example.mylingo.R
+import com.example.mylingo.databinding.FragmentContactUsBinding
+import com.example.mylingo.ui.ContactUs.ContactUsFragment
 import com.google.android.material.navigation.NavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -44,14 +44,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.Quit -> {
+        if (item.itemId==R.id.Quit) {
               finish()
             }
+        else{
+            NavigationUI.onNavDestinationSelected(item, navController)
+            binding.MainDrawerLayout.closeDrawer(GravityCompat.START)
         }
-        binding.MainDrawerLayout.closeDrawer(GravityCompat.START)
-        return true
+        return false
     }
+
     override fun onSupportNavigateUp(): Boolean {
         val navController=findNavController(R.id.fragmentContainerView)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
