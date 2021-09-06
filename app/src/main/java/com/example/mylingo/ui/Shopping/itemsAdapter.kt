@@ -1,6 +1,5 @@
 package com.example.mylingo.ui.Shopping
 
-import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
@@ -12,7 +11,6 @@ import com.example.mylingo.data.items
 import com.example.mylingo.R
 import com.example.mylingo.databinding.ItemItemsBinding
 import com.google.android.material.snackbar.Snackbar
-import java.util.function.Predicate
 
 
 val SaleList:MutableList<items> = mutableListOf()
