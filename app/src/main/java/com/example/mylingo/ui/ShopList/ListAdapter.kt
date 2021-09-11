@@ -24,7 +24,7 @@ class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
         val binding= ListItemsBinding.inflate(LayoutInflater.from(parent.context),
             parent,false)
 
-            binding.setClickListener1 {
+        binding.setClickListener1 {
                         binding.NumTextView.text=(binding.NumTextView.text.toString().toInt() + 1).toString()
                         binding.totalTextView.text = (binding.NumTextView.text.toString()
                             .toInt() * binding.costTextView.text.toString().toInt()).toString()
@@ -32,38 +32,32 @@ class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
                             binding.NumTextView.text.toString().toInt()
                         SaleList.find { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() }?.likes =
                             binding.totalTextView.text.toString().toInt()
-
+                        CalcSum(SaleList)
                 }
         binding.setClickListener2(){
-               // binding.decimageButton.setOnClickListener {
-
                         if (binding.NumTextView.text.toString().toInt() > 1) {
                             binding.NumTextView.text =(binding.NumTextView.text.toString().toInt() - 1).toString()
                         }
                         binding.totalTextView.text = (binding.NumTextView.text.toString()
                             .toInt() * binding.costTextView.text.toString().toInt()).toString()
-                   // SaleList[p].width=binding.NumTextView.text.toString().toInt()
-
                         SaleList.find { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() }?.width =
                             binding.NumTextView.text.toString().toInt()
                         SaleList.find { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() }?.likes =
                             binding.totalTextView.text.toString().toInt()
-                   // notifyItemChanged(p)
-
+                        CalcSum(SaleList)
                 }
         binding.setClickListener3(){
-               // binding.delimageButton.setOnClickListener {
-                    val p: Int = binding.PosTextView.text.toString().toInt()
-                    if (SaleList.removeAll({ Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() })) {
-                        Snackbar.make(
+                        val p: Int = binding.PosTextView.text.toString().toInt()
+                        if (SaleList.removeAll({ Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() })) {
+                         Snackbar.make(
                             binding.root,
                             "this Item has been delete.",
                             Snackbar.LENGTH_LONG
-                        ).show()
-                        notifyItemRemoved(p)
-                    }
+                         ).show()
+                         notifyItemRemoved(p)
+                        }
+                        CalcSum(SaleList)
                 }
-
         return ListViewHolder(binding)
     }
 
@@ -93,6 +87,15 @@ class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
 
     override fun getItemCount(): Int {
         return SaleList.size
+    }
+    fun CalcSum(SL:MutableList<items>){
+        var i=0
+        var total=0
+        for (item in SL)
+        {
+            total+=SL
+            ++i
+        }
     }
 
     companion object{

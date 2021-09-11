@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import com.example.mylingo.databinding.FragmentShopListBinding
 import com.example.mylingo.ui.Shopping.SaleList
 
-
 class ShopListFragment:Fragment() {
     private var _binding: FragmentShopListBinding? = null
     private val binding get() = _binding!!

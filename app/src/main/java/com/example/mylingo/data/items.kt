@@ -11,7 +11,7 @@ data class items(
     var likes:Int,
     val description:String?,
     val user: itemsUser,
-    val urls: itemsUrls,
+    val urls: itemsUrls
     ): Parcelable {
     @Parcelize
     data class itemsUser(

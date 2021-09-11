@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
-            name="clickListener"
+            name="clickListener1"
             type="android.view.View.OnClickListener"/>
+
     </data>
  <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
@@ -20,7 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/HorizontalGuideLine"
-        android:onClick="@{clickListener}"
+        android:onClick="@{clickListener1}"
         />
      <View
          android:id="@+id/GradientView"
@@ -80,6 +81,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginStart="10dp"
+        android:onClick="@{clickListener1}"
          />
  </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
