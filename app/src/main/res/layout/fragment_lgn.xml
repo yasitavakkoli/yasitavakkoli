@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".ui.Login.LgnFragment">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/UserNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_name"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/UserNameEditText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/UserNameEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/material_on_primary_disabled"
+                android:textSize="24dp"
+                app:layout_constraintBottom_toTopOf="@+id/PasswordTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/UserNameTextView"
+                tools:ignore="Autofill,LabelFor"
+                tools:targetApi="p" />
+
+            <TextView
+                android:id="@+id/PasswordTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/password"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@+id/UserNameEditText"
+                app:layout_constraintBottom_toTopOf="@+id/PasswordEditText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/PasswordEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textColorHint="@color/material_on_primary_disabled"
+                android:textSize="24dp"
+                app:layout_constraintBottom_toTopOf="@+id/LoginBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/PasswordTextView"
+                tools:ignore="Autofill,LabelFor"
+                tools:targetApi="p" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/LoginBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/RegisterBtn"
+                app:layout_constraintTop_toBottomOf="@+id/PasswordEditText" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/RegisterBtn"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/LoginBtn"
+                app:layout_constraintEnd_toStartOf="@id/LoginBtn"
+                app:layout_constraintStart_toStartOf="parent" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/LoginHguidline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.45"
+                tools:ignore="DuplicateIds" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/LoginHguidline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.7" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/LoginHguidline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.9" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>

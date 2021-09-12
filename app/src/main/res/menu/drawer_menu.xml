@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/settingFragment"
-        android:title="@string/setting"/>
-    <item android:id="@+id/aboutUsFragment"
-        android:title="@string/about_us"/>
     <item android:id="@+id/contactUsFragment"
         android:title="@string/contact_us"/>
-    <item android:id="@+id/profileFragment"
+    <item android:id="@+id/lgnFragment"
         android:title="@string/profile"/>
     <item android:id="@+id/Quit"
         android:title="@string/exit" />

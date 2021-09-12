@@ -13,6 +13,7 @@ import com.example.mylingo.databinding.FragmentShoppingBinding
 import dagger.hilt.android.AndroidEntryPoint
 import com.example.mylingo.R
 import com.example.mylingo.ui.Dashboard.DashboardFragmentDirections
+import com.google.android.material.snackbar.Snackbar
 
 
 @AndroidEntryPoint
@@ -46,8 +47,14 @@ class ShoppingFragment : Fragment(R.layout.fragment_shopping) {
         _binding = FragmentShoppingBinding.inflate(layoutInflater,container,false)
         val view = binding.root
         binding.ShopListFloatingButton.setOnClickListener {
-            val action =ShoppingFragmentDirections.actionShoppingFragment3ToShopListFragment()
-            Navigation.findNavController(view).navigate(action)
+            if (SaleList.isNotEmpty()){
+              val action =ShoppingFragmentDirections.actionShoppingFragment3ToShopListFragment()
+              Navigation.findNavController(view).navigate(action)
+            }
+            else {
+                Snackbar.make(binding.root, "Your Shopping List is Empty.", Snackbar.LENGTH_LONG)
+                    .show()
+            }
         }
         return view
     }

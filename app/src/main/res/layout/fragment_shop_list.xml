@@ -8,6 +8,29 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <Button
+            android:id="@+id/BuyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/listRecyclerView"
+            android:visibility="gone"
+            android:text="@string/buy"/>
+        <TextView
+            android:id="@+id/EmptyListTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/your_shopping_list_is_empty"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/white"
+            android:textSize="24dp"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listRecyclerView"
             android:layout_width="match_parent"
@@ -15,35 +38,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/TotalTextView"
+            app:layout_constraintBottom_toTopOf="@+id/BuyButton"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/list_items"
             android:layout_marginTop="10dp" />
-        <TextView
-            android:id="@+id/TotalTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Total:"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/TotalCostTextView"
-            app:layout_constraintTop_toBottomOf="@+id/listRecyclerView"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:textSize="24dp"
-            android:layout_margin="10dp"
-            android:textColor="@color/white"
-             />
-
-        <TextView
-            android:id="@+id/TotalCostTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TotalCost"
-            android:textSize="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/TotalTextView"
-            app:layout_constraintTop_toBottomOf="@+id/listRecyclerView"
-            android:layout_margin="10dp"
-            android:textColor="@color/white"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

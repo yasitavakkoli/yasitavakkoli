@@ -20,4 +20,21 @@
     <string name="contact_us">Contact Us</string>
     <string name="profile">Profile</string>
     <string name="exit">Exit</string>
+    <string name="buy">BUY</string>
+    <string name="your_shopping_list_is_empty">Your Shopping List is Empty.</string>
+    <string name="total">Total:</string>
+    <string name="totalcost">TotalCost</string>
+    <string name="thanks_to">Thanks to</string>
+    <string name="username">username</string>
+    <string name="payment">Payment</string>
+    <string name="user_name">User Name:</string>
+    <string name="password">Password:</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="address">Address:</string>
+    <string name="tel">Tel:</string>
+    <string name="username1">Username:</string>
+    <string name="email_address">Email Address:</string>
+    <string name="name">Name:</string>
+    <string name="username2">Username:</string>
 </resources>

@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -14,16 +15,16 @@ import com.example.mylingo.R
 import com.example.mylingo.databinding.ListItemsBinding
 import com.google.android.material.snackbar.Snackbar
 
+
+
 class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
         ListAdapter.ListViewHolder>(LIST_COMPARATOR)
 {
     val SaleList:MutableList<items> = MyList
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder
     {
         val binding= ListItemsBinding.inflate(LayoutInflater.from(parent.context),
             parent,false)
-
         binding.setClickListener1 {
                         binding.NumTextView.text=(binding.NumTextView.text.toString().toInt() + 1).toString()
                         binding.totalTextView.text = (binding.NumTextView.text.toString()
@@ -32,7 +33,7 @@ class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
                             binding.NumTextView.text.toString().toInt()
                         SaleList.find { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() }?.likes =
                             binding.totalTextView.text.toString().toInt()
-                        CalcSum(SaleList)
+                       // CalcSum(SaleList)
                 }
         binding.setClickListener2(){
                         if (binding.NumTextView.text.toString().toInt() > 1) {
@@ -44,19 +45,19 @@ class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
                             binding.NumTextView.text.toString().toInt()
                         SaleList.find { Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() }?.likes =
                             binding.totalTextView.text.toString().toInt()
-                        CalcSum(SaleList)
+                      //  CalcSum(SaleList)
                 }
         binding.setClickListener3(){
                         val p: Int = binding.PosTextView.text.toString().toInt()
                         if (SaleList.removeAll({ Salelist: items -> Salelist.urls.regular == binding.UrlTextView.text.toString() })) {
                          Snackbar.make(
                             binding.root,
-                            "this Item has been delete.",
+                            "this Item has been deleted.",
                             Snackbar.LENGTH_LONG
                          ).show()
                          notifyItemRemoved(p)
                         }
-                        CalcSum(SaleList)
+                      //  CalcSum(SaleList)
                 }
         return ListViewHolder(binding)
     }
@@ -75,7 +76,7 @@ class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
         holder.MTotalCost.text=SaleList[position].likes.toString()
         holder.Mpos.text=position.toString()
     }
-    class ListViewHolder(private val binding:ListItemsBinding) :
+    class ListViewHolder(binding:ListItemsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         val MUrl:TextView=itemView.findViewById(R.id.UrlTextView)
         val Mimage:ImageView=itemView.findViewById(R.id.ImageView)
@@ -93,9 +94,10 @@ class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
         var total=0
         for (item in SL)
         {
-            total+=SL
+            total+=SL[i].likes
             ++i
         }
+      //  CalcResult=total.toFloat()
     }
 
     companion object{
@@ -107,3 +109,4 @@ class ListAdapter(MyList: MutableList<items>): PagingDataAdapter<items,
         }
     }
 }
+

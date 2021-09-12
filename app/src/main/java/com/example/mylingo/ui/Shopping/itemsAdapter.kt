@@ -26,7 +26,14 @@ class itemsAdapter: PagingDataAdapter<items,
         binding.setClickListener1 {
             val find:items? = SaleList.find{ Salelist: items -> Salelist.urls.regular==binding.UrlTextView.text.toString() }
             if (find!=null){
-                Snackbar.make(binding.root, "this Item already added.", Snackbar.LENGTH_LONG).show()
+                if (binding.checkBox.isChecked == true){
+                    SaleList.remove(find)
+                    binding.checkBox.isChecked = false
+                }
+                else{
+                    Snackbar.make(binding.root, "this Item already added.", Snackbar.LENGTH_LONG).show()
+                    binding.checkBox.isChecked = true
+                }
             }
             else{
                 SaleList.add(

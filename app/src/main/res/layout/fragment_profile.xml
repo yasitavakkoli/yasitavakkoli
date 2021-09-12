@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.Profile.ProfileFragment"
+    android:background="@color/teal_200"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:id="@+id/NameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/NameET"
+            app:layout_constraintStart_toEndOf="@+id/RegVertGuidline2"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/AddressTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/address"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/AddressET"
+            app:layout_constraintStart_toEndOf="@+id/RegVertGuidline2"
+            app:layout_constraintStart_toStartOf="@+id/NameTV"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/TelNoTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tel"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/TelNoET"
+            app:layout_constraintStart_toEndOf="@+id/RegVertGuidline2"
+            app:layout_constraintStart_toStartOf="@+id/AddressTV"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/UserNameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/username2"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/UserNameET"
+            app:layout_constraintStart_toEndOf="@+id/RegVertGuidline2"
+            app:layout_constraintStart_toStartOf="@+id/TelNoTV"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/PasswordTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/password"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/PasswordET"
+            app:layout_constraintStart_toEndOf="@+id/RegVertGuidline2"
+            app:layout_constraintStart_toStartOf="@+id/UserNameTV"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/EmailTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email_address"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/EmailET"
+            app:layout_constraintStart_toEndOf="@+id/RegVertGuidline2"
+            app:layout_constraintStart_toStartOf="@+id/PasswordTV"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/EmailET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/RegBtn"
+            app:layout_constraintStart_toStartOf="@+id/PasswordET"
+            app:layout_constraintTop_toBottomOf="@+id/PasswordET"
+            tools:ignore="Autofill,LabelFor,MissingConstraints,TextFields"
+            tools:targetApi="p" />
+
+        <EditText
+            android:id="@+id/PasswordET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textColorHint="@color/material_on_primary_disabled"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/EmailET"
+            app:layout_constraintStart_toStartOf="@+id/UserNameET"
+            app:layout_constraintTop_toBottomOf="@+id/UserNameET"
+            tools:ignore="Autofill,LabelFor,TextFields"
+            tools:targetApi="p" />
+
+        <EditText
+            android:id="@+id/UserNameET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHint="@color/material_on_primary_disabled"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/PasswordET"
+            app:layout_constraintStart_toEndOf="@+id/RegVertGuidline1"
+            app:layout_constraintStart_toStartOf="@+id/TelNoET"
+            app:layout_constraintTop_toBottomOf="@+id/TelNoET"
+            tools:ignore="Autofill,LabelFor,TextFields"
+            tools:targetApi="p" />
+
+        <EditText
+            android:id="@+id/TelNoET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="phone"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/UserNameET"
+            app:layout_constraintStart_toEndOf="@+id/RegVertGuidline1"
+            app:layout_constraintStart_toStartOf="@+id/AddressET"
+            app:layout_constraintTop_toBottomOf="@+id/AddressET"
+            android:autofillHints=""
+            tools:ignore="LabelFor" />
+
+        <EditText
+            android:id="@+id/AddressET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:textColor="@color/white"
+            android:textColorHint="@color/material_on_primary_disabled"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/TelNoET"
+            app:layout_constraintStart_toStartOf="@+id/NameET"
+            app:layout_constraintTop_toBottomOf="@+id/NameET"
+            tools:ignore="Autofill,LabelFor,TextFields"
+            tools:targetApi="p" />
+
+        <EditText
+            android:id="@+id/NameET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/AddressET"
+            app:layout_constraintStart_toEndOf="@+id/RegVertGuidline1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread"
+            android:autofillHints=""
+            tools:ignore="LabelFor" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/RegBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/register"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/RegVertGuidline1"
+            app:layout_constraintTop_toBottomOf="@+id/EmailET"
+            android:layout_margin="8dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/RegVertGuidline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35"
+            tools:ignore="DuplicateIds" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/RegVertGuidline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

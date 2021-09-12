@@ -5,15 +5,25 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
+import androidx.core.view.get
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.*
 import com.example.mylingo.databinding.ActivityMainBinding
 import com.example.mylingo.R
+import com.example.mylingo.data.customer
+import com.example.mylingo.ui.Shopping.SaleList
+import com.example.mylingo.ui.Shopping.ShoppingFragmentDirections
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarItemView
 import com.google.android.material.navigation.NavigationView
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
+
+val Users:MutableList<customer> = mutableListOf()
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -38,6 +48,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         binding.NavigationView.setNavigationItemSelectedListener(this)
+        Users.add(0,customer("1","1'user","one","","","",""))
+        Users.add(0,customer("2","2'user","two","","","",""))
+        Users.add(0,customer("3","3'user","three","","","",""))
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -45,11 +58,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
               finish()
             }
         else{
-            NavigationUI.onNavDestinationSelected(item, navController)
-            binding.MainDrawerLayout.closeDrawer(GravityCompat.START)
-        }
+                NavigationUI.onNavDestinationSelected(item, navController)
+                binding.MainDrawerLayout.closeDrawer(GravityCompat.START)
+            }
         return false
     }
+   /* private fun ShoplistClick() {
+        val item: String = binding.NavigationView.checkedItem!!.itemId.toString()
+    }*/
 
     override fun onSupportNavigateUp(): Boolean {
         val navController=findNavController(R.id.fragmentContainerView)

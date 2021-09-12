@@ -17,11 +17,15 @@
         <entry key="..\:/MyLingo/app/src/main/res/layout/activity_intro.xml" value="0.19270833333333334" />
         <entry key="..\:/MyLingo/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/MyLingo/app/src/main/res/layout/fragment_about_us.xml" value="0.20625" />
+        <entry key="..\:/MyLingo/app/src/main/res/layout/fragment_buy.xml" value="0.2833333333333333" />
         <entry key="..\:/MyLingo/app/src/main/res/layout/fragment_contact_us.xml" value="0.20625" />
         <entry key="..\:/MyLingo/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
+        <entry key="..\:/MyLingo/app/src/main/res/layout/fragment_lgn.xml" value="0.2833333333333333" />
+        <entry key="..\:/MyLingo/app/src/main/res/layout/fragment_profile.xml" value="0.2833333333333333" />
+        <entry key="..\:/MyLingo/app/src/main/res/layout/fragment_registration.xml" value="0.2833333333333333" />
         <entry key="..\:/MyLingo/app/src/main/res/layout/fragment_sale_baskett.xml" value="0.20572916666666666" />
         <entry key="..\:/MyLingo/app/src/main/res/layout/fragment_setting.xml" value="0.20625" />
-        <entry key="..\:/MyLingo/app/src/main/res/layout/fragment_shop_list.xml" value="0.25" />
+        <entry key="..\:/MyLingo/app/src/main/res/layout/fragment_shop_list.xml" value="0.33" />
         <entry key="..\:/MyLingo/app/src/main/res/layout/fragment_shopping.xml" value="0.20625" />
         <entry key="..\:/MyLingo/app/src/main/res/layout/item_items.xml" value="0.20625" />
         <entry key="..\:/MyLingo/app/src/main/res/layout/list_items.xml" value="0.18" />
